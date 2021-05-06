@@ -68,33 +68,33 @@ group = publishProperties.getProperty('publishedGroupId')
 publishing {
     publications {
         release(MavenPublication) {
-            pom {
-                packaging 'aar'
-                groupId publishProperties.getProperty('publishedGroupId')
-                artifactId libraryProperties.getProperty('artifact')
+            groupId group
+            version version
+            artifactId libraryProperties.getProperty('artifact')
 
-                name libraryProperties.getProperty('libraryName')
-                description libraryProperties.getProperty('libraryDescription')
-                url publishProperties.getProperty('siteUrl')
+            pom {
+                name = libraryProperties.getProperty('libraryName')
+                description = libraryProperties.getProperty('libraryDescription')
+                url = publishProperties.getProperty('siteUrl')
 
                 scm {
-                    connection publishProperties.getProperty('scmConnection')
-                    developerConnection publishProperties.getProperty('scmDevConnection')
-                    url publishProperties.getProperty('siteUrl')
+                    connection = publishProperties.getProperty('scmConnection')
+                    developerConnection = publishProperties.getProperty('scmDevConnection')
+                    url = publishProperties.getProperty('siteUrl')
                 }
 
                 licenses {
                     license {
-                        name licenseProperties.getProperty('licenseName')
-                        url licenseProperties.getProperty('licenseUrl')
+                        name = licenseProperties.getProperty('licenseName')
+                        url = licenseProperties.getProperty('licenseUrl')
                     }
                 }
 
                 developers {
                     developer {
-                        id developerProperties.getProperty('developerId')
-                        name developerProperties.getProperty('developerName')
-                        email developerProperties.getProperty('developerEmail')
+                        id = developerProperties.getProperty('developerId')
+                        name = developerProperties.getProperty('developerName')
+                        email = developerProperties.getProperty('developerEmail')
                     }
                 }
 
@@ -118,7 +118,7 @@ publishing {
             // any other name that's descriptive for you
             name = "mavencentral"
 
-            def releasesRepoUrl = "https://s01.oss.sonatype.org/content/repositories/releases/"
+            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
             def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
             // You only need this if you want to publish snapshots, otherwise just set the URL
             // to the release repo directly
