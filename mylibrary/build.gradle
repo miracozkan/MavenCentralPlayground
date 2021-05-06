@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'maven-publish'
-    id 'maven'
 }
 
 android {
@@ -45,3 +44,4 @@ dependencies {
 }
 
 tasks.withType(Javadoc).all { enabled = false }
+apply from: 'https://raw.githubusercontent.com/miracozkan/MavenCentralPlayground/master/publish/publish.gradle'

@@ -69,7 +69,6 @@ publishing {
     publications {
         release(MavenPublication) {
             artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
-            artifact androidSourcesJar
             pom {
                 packaging 'aar'
                 groupId publishProperties.getProperty('publishedGroupId')
@@ -120,7 +119,7 @@ publishing {
             // any other name that's descriptive for you
             name = "mavencentral"
 
-            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def releasesRepoUrl = "https://s01.oss.sonatype.org/content/repositories/releases/"
             def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
             // You only need this if you want to publish snapshots, otherwise just set the URL
             // to the release repo directly
