@@ -68,7 +68,6 @@ group = publishProperties.getProperty('publishedGroupId')
 publishing {
     publications {
         release(MavenPublication) {
-            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
             pom {
                 packaging 'aar'
                 groupId publishProperties.getProperty('publishedGroupId')
