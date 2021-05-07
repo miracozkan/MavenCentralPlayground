@@ -68,8 +68,8 @@ group = publishProperties.getProperty('publishedGroupId')
 publishing {
     publications {
         release(MavenPublication) {
-            groupId group
-            version version
+            groupId publishProperties.getProperty('publishedGroupId')
+            version libraryProperties.getProperty('libraryVersion')
             artifactId libraryProperties.getProperty('artifact')
 
             pom {
@@ -136,6 +136,16 @@ publishing {
 signing {
     sign publishing.publications
 }
+
+nexusStaging {
+    serverUrl = "https://s01.oss.sonatype.org/service/local/"
+    packageGroup = publishProperties.getProperty('publishedGroupId')
+    stagingProfileId = localProperties.getProperty('stagingProfileId')
+    stagingRepositoryId = libraryProperties.getProperty('stagingRepositoryId')
+    username = ossrhUsername
+    password = ossrhPassword
+}
+
 
 task androidSourcesJar(type: Jar) {
     classifier = 'sources'
