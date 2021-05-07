@@ -45,5 +45,4 @@ dependencies {
 
 tasks.withType(Javadoc).all { enabled = false }
 
-//apply from: 'https://raw.githubusercontent.com/miracozkan/MavenCentralPlayground/master/publish/publish.gradle'
 apply from : "$rootDir/publish/publish.gradle"
