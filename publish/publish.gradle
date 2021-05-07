@@ -141,7 +141,7 @@ nexusStaging {
     serverUrl = "https://s01.oss.sonatype.org/service/local/"
     packageGroup = publishProperties.getProperty('publishedGroupId')
     stagingProfileId = localProperties.getProperty('stagingProfileId')
-    stagingRepositoryId = libraryProperties.getProperty('stagingRepositoryId')
+    stagingRepositoryId = publishProperties.getProperty('stagingRepositoryId')
     username = ossrhUsername
     password = ossrhPassword
 }

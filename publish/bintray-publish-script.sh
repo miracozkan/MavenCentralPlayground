@@ -25,3 +25,6 @@ RELEASED_MODULE_NAME="${TAG_SPLIT_ARRAY[${#TAG_SPLIT_ARRAY[@]}-1]}"
 
 # Uploads generated pom and aar packages
 ./gradlew "$RELEASED_MODULE_NAME":publish
+
+# Close library repository and release to maven
+./gradlew closeAndReleaseRepository
